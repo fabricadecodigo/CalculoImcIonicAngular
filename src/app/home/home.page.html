@@ -7,23 +7,6 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <form (ngSubmit)="onSubmit()" novalidate>
-    <ion-list>
-      <ion-item>
-        <ion-label position="stacked">Altura</ion-label>
-        <ion-input type="number" [(ngModel)]="model.altura" name="altura"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked">Peso</ion-label>
-        <ion-input type="number" [(ngModel)]="model.peso" name="peso"></ion-input>
-      </ion-item>
-    </ion-list>
-    <ion-button type="submit" expand="block">Calcular</ion-button>
-  </form>
-
-  <div class="ion-text-center" *ngIf="result !== null" >
-    <h2>IMC: {{result.imc.toFixed(2)}}</h2>
-    <p>Classificação: {{result.classificacao}}</p>
-    <p>Grau de obesidade: {{result.grauObesidade}}</p>
-  </div>
+  <app-form (resultChange)="onResultChange($event)"></app-form>
+  <app-result [result]="result" *ngIf="result != null"></app-result>
 </ion-content>
