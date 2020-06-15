@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
-
+import { IonicModule } from '@ionic/angular';
+import { FormComponent } from './../calculoimc/form/form.component';
+import { ResultComponent } from './../calculoimc/result/result.component';
 import { HomePageRoutingModule } from './home-routing.module';
-
+import { HomePage } from './home.page';
 
 @NgModule({
   imports: [
@@ -14,6 +14,10 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    FormComponent,
+    ResultComponent
+  ]
 })
 export class HomePageModule {}
